@@ -8,17 +8,10 @@ users = [
    {'first_name' : 'KB', 'last_name' : 'Tonel'}
 ]
 
-def iterateDictionary(some_list):
-    for value in some_list:
-        for key in value:
-            print(f'{key} - {value[key]}', end = ", ")
-        print()
-iterateDictionary(users)
-
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', x=users)
 
 
 

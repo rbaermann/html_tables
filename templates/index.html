@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="html_table" content="I am making an HTML Table">
         <title>HTML Table</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <div class="wrapper">
+        <div>
             <table>
                 <thead>
                     <tr>
@@ -17,11 +17,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {% for i in x %}
+                        <tr>
+                            <td>{{i['first_name']}}</td>
+                            <td>{{i['last_name']}}</td>
+                            <td>{{i['first_name'] + ' ' + i['last_name']}}</td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
